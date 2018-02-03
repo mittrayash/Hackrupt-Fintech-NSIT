@@ -1,0 +1,29 @@
+Bitcoin Wallet - Interfacing with AMazon, etc
+
+
+
+
+We plan to build an Artificial Intelligence based Recommender system that will be available to people on all major platforms. Through this application, we will disseminate the profits one can exhibit by incorporating finance into their lives. Not only do we focus on mere inclusion, we also incorporate the theme of good financial inclusion, wherein a person is rewarded or penalized based on their past record. Also, we introduce refereeing as a concept. In that sense, a referee can vouch for a new candidate or a candidate whose profile is on the lower side of the spectrum.
+
+Here is a blueprint of our plan:
+
+Classifying people based on their financial record and providing recommendations and offers based on the same.
+Incorporating referees and their records - Referees get rewarded / penalized based on the performance of their recommended users.
+Loan Eligibility limit as per the person's record, which is subject to change as per his record and quality of refereeing
+Improvised offers and higher loan limits in reward for timely loan repayments and good refereeing
+
+
+
+
+
+Dataset Columns
+-----------------
+
+Account Balance
+Paid Loans
+Currently Active Loans with Amount
+Avg of Debits
+Avg of Credits
+Reference Power
+Amount in Fixed Deposits
+
