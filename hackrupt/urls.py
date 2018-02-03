@@ -18,11 +18,15 @@ from django.contrib import admin
 from django.urls import path
 from Customer import views
 from django.views.generic.base import TemplateView
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', TemplateView.as_view(template_name='../Template/index.html')),
-    path('predict/', views.CustomerList.as_view()),  
+    #path('home/', views.Index.as_view()),
+    path('predict/', views.CustomerList.as_view()),
     path('login/', views.CheckLogin.as_view()),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
 
