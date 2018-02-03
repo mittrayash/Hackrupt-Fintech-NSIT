@@ -1,10 +1,10 @@
 from django.http import HttpResponse,JsonResponse
 from .models import Customer
-from django.shortcuts import render,redirect
+from django.shortcuts import redirect
 from  rest_framework.views import APIView
 from  rest_framework.response import Response
 from .serializers import CustomerSerializer
-from django.template import Context, loader
+from django.template import loader
 import matplotlib.pyplot as plt
 import os
 
@@ -23,21 +23,16 @@ class CustomerList(APIView) :
 
 class CheckLogin(APIView):
 
-    def getHtml(self , user):
-        html = "<html><body> User Id : " + str(user.id) + "<br>User Account : " + str(user.customer_id) + "<br>User Name : " + str(user.customer_name) + "</body></html>"
-        return html
-
-
-    def get(self, request):
-        id = request.GET['id']
-        password = request.GET['pass']
+    def post(self, request):
+        id = request.POST.get("id" , "")
+        password = request.POST.get("pass" , "")
         customer = Customer.objects.filter(customer_id=id).filter(customer_password=password).values()
         html = ""
-        if len(customer) > 0 :
+        if len(customer) > 0:
             user = Customer.objects.get(customer_id=id)
             request.session['customer_id'] = str(user.customer_id)
             return redirect('user_page')
-        else :
+        else:
             html = "<html><body>Incorrect Credentials</body></html>"
             return HttpResponse(html)
 
