@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Details</title>
+    <style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even){background-color: #f2f2f2}
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+    </style>
+</head>
+<body>
+
+<center><h1>{{ user.customer_name }}</h1>
+<h2>{{ user.customer_id }}</h2>
+
+<h3>User Details</h3></center>
+
+<table>
+  <tr>
+    <th>A/C Balance</th>
+    <th>Fixed Deposit</th>
+    <th>Active Loans</th>
+    <th>Level of Refr</th>
+    <th>Paid Loans</th>
+  </tr>
+  <tr>
+    <td>50000</td>
+    <td>50000</td>
+    <td>50000</td>
+    <td>50000</td>
+    <td>50000</td>
+  </tr>
+</table>
+
+</body>
+</html>
