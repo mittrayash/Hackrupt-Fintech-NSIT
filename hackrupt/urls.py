@@ -19,10 +19,11 @@ from django.urls import path
 from Customer import views
 from django.views.generic.base import TemplateView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+import os
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', TemplateView.as_view(template_name='D:\Hackrupt-Fintech-NSIT\Customer\Template\index.html')),
+    path('home/', TemplateView.as_view(template_name=os.path.dirname(os.path.dirname( __file__ ))+'/Customer/Template/index.html')),
     #path('home/', views.Index.as_view()),
     path('predict/', views.CustomerList.as_view()),
     path('login/', views.CheckLogin.as_view()),

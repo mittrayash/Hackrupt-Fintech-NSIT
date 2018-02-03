@@ -57,7 +57,7 @@ ROOT_URLCONF = 'hackrupt.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['D:\Hackrupt-Fintech-NSIT\Customer\Template'],
+        'DIRS': [os.path.dirname(os.path.dirname( __file__ ))+'/Customer/Template/index.html'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
