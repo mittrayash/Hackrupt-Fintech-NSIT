@@ -27,7 +27,7 @@ urlpatterns = [
     #path('home/', views.Index.as_view()),
     path('predict/', views.CustomerList.as_view()),
     path('login/', views.CheckLogin.as_view()),
-    path('user_page/(?P<pk>\d+)/$', views.UserPage.as_view() , name='user_page'),
+    path('user_page/', views.UserPage.as_view() , name='user_page'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
