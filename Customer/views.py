@@ -28,7 +28,7 @@ class CheckLogin(APIView):
     def get(self, request):
         id = request.GET['id']
         password = request.GET['pass']
-        customer = Customer.objects.filter(customer_id=id).filter(customer_password = password).values()
+        customer = Customer.objects.filter(customer_id=id).filter(customer_password=password).values()
         html = ""
         if len(customer) > 0 :
             html = "<html><body>Login Success</body></html>"
