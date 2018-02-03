@@ -21,5 +21,6 @@ from Customer import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('predict/', views.CustomerList.as_view()),
+    path('login/', views.CheckLogin.as_view()),
 ]
 

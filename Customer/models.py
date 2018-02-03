@@ -4,7 +4,7 @@ from django.db import models
 
 class Customer(models.Model):
     customer_id = models.IntegerField(20)
-    customer_password = models.CharField(max_length=100) 
+    customer_password = models.CharField(max_length=100)
     customer_name = models.CharField(max_length=100)
 
     def __str__(self):
