@@ -14,11 +14,35 @@ from .serializers import CustomerSerializer
 class CustomerList(APIView) :
 
     def get(self , request):
-        id = 0
-        #id = request.GET['id']
-        if id == 0 :
-            artist = Customer.objects.all()
-        else:
-            artist = Customer.objects.filter(customer_id=id).values()
-        serializer = CustomerSerializer(artist , many=True)
+        customer = Customer.objects.all()
+
+        serializer = CustomerSerializer(customer , many=True)
         return Response(serializer.data)
+
+
+
+class CheckLogin(APIView):
+
+    def get(self, request):
+        id = request.GET['id']
+        password = request.GET['pass']
+        customer = Customer.objects.filter(customer_id=id).filter(customer_password = password).values()
+        html = ""
+        if len(customer) > 0 :
+            html = "<html><body>Login Success</body></html>"
+        else :
+            html = "<html><body>Incorrect Credentials</body></html>"
+
+        return HttpResponse(html)
+
+
+class Index(APIView):
+
+    def get(self):
+        html = "<html><body>Index Page</body></html>"
+        return HttpResponse(html)
+
+
+
+
+
