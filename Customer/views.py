@@ -1,10 +1,8 @@
-from django.http import HttpResponse
-from django.http import Http404
+from django.http import HttpResponse,JsonResponse
 from .models import Customer
 from django.shortcuts import render,redirect
 from  rest_framework.views import APIView
 from  rest_framework.response import Response
-from  rest_framework import status
 from .serializers import CustomerSerializer
 from django.template import Context, loader
 import matplotlib.pyplot as plt
@@ -12,7 +10,6 @@ import os
 
 # Create your views here.
 
-# List all artists or create a new one
 #predict/
 class CustomerList(APIView) :
 
@@ -50,7 +47,7 @@ class UserPage(APIView):
     def get(self , request):
         print(request)
         user = Customer.objects.get(customer_id=request.session['customer_id'])
-        t = loader.get_template(os.path.dirname(os.path.dirname(__file__)) + '/Customer/Template/userdetails.html')
+        t = loader.get_template(os.path.dirname(os.path.dirname(__file__)) + '/Customer/Template/user_details.html')
         c = {
             'user': user
         }
@@ -63,5 +60,12 @@ class UserPage(APIView):
 
 
 
+class GetUserJson(APIView):
+
+    def get(self , request):
+        id = request.GET['id']
+        user = Customer.objects.get(customer_id=id)
+        return JsonResponse({'user_id' : user.id ,
+                             'user_name' : user.customer_name })
 
 

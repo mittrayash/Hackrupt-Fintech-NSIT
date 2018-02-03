@@ -25,9 +25,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', TemplateView.as_view(template_name=os.path.dirname(os.path.dirname( __file__ ))+'/Customer/Template/index.html')),
     #path('home/', views.Index.as_view()),
-    path('predict/', views.CustomerList.as_view()),
+    path('customers/all/', views.CustomerList.as_view()),
     path('login/', views.CheckLogin.as_view()),
     path('user_page/', views.UserPage.as_view() , name='user_page'),
+    path('get_user_json/', views.GetUserJson.as_view()),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
