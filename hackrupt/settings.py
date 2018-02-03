@@ -57,7 +57,7 @@ ROOT_URLCONF = 'hackrupt.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.dirname(os.path.dirname( __file__ ))+'/Customer/Template/index.html'],
+        'DIRS': [os.path.dirname(os.path.dirname( __file__ ))+'/Customer/Template/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
