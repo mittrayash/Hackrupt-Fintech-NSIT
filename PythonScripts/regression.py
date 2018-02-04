@@ -7,12 +7,12 @@ import sklearn.linear_model
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-get_ipython().magic('matplotlib notebook')
+import os
 
 
 # In[253]:
 
-df = pd.read_csv('dataset.csv')
+df = pd.read_csv(os.path.dirname(os.path.dirname(__file__)) + '/dataset.csv')
 df = df.drop('Unnamed: 0',1)
 df.head()
 
@@ -42,7 +42,7 @@ def par(idd, df):
 
 # In[277]:
 
-df[df['ID'] == 1001]
+
 
 
 # In[296]:
@@ -101,20 +101,19 @@ def trend(idd):
     
 
             
-trend(1007)
+'''trend(1007)
 print(lll)
-print(mmm[0][0])
+print(mmm[0][0])'''
 
 
 # In[299]:
 
-idd = 1007
+#idd = 1002
 def start(idd):
-    
     trend(idd)
-    print(lll)
-    print(mmm[0][0])
-start(idd)
+    #print('INSIDE : ' , mmm[0][0])
+    return lll,mmm[0][0]
+#start(idd)
 
 
 # In[ ]:
