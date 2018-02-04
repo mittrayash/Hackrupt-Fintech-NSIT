@@ -94,7 +94,9 @@ class UserPanel(APIView):
             matplotlib.ticker.FuncFormatter(lambda x, p: format(int(x), ',')))
         plt.legend()
         address = 'Customer/static/Graphs/' + str(user.customer_id) + '-loan_graph.png'
+        plt.title('Loan Adviser')
         plt.savefig(address)
+
         return HttpResponse(t.render(c))
 
 

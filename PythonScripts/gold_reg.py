@@ -90,7 +90,7 @@ ax.spines['right'].set_visible(False)
 ax.spines['top'].set_visible(False)
 ax.get_yaxis().set_major_formatter(
 matplotlib.ticker.FuncFormatter(lambda x, p: format(int(x), ',')))
-
+plt.title('Gold Investment Adviser')
 address = '../Customer/static/Graphs/gold.png'
 plt.savefig(address)
 plt.show()

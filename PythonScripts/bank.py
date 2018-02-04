@@ -41,7 +41,7 @@ ax.spines['top'].set_visible(False)
 
 plt.scatter(years, listt, c='r', label='Predicted Returns by 2020')
 plt.legend()
-
+plt.title('Bank Investment Adviser')
 address = '../Customer/static/Graphs/bank.png'
 plt.savefig(address)
 
