@@ -31,7 +31,7 @@ df
 
 # In[7]:
 
-df2 = pd.DataFrame()  
+df2 = pd.DataFrame()
 df2['Year'] = df.columns
 df2['Price'] = df.values.reshape(-1)
 
