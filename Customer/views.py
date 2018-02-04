@@ -5,7 +5,7 @@ from  rest_framework.views import APIView
 from  rest_framework.response import Response
 from .serializers import CustomerSerializer
 from django.template import loader
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import os
 
 # Create your views here.
@@ -31,13 +31,13 @@ class CheckLogin(APIView):
         if len(customer) > 0:
             user = Customer.objects.get(customer_id=id)
             request.session['customer_id'] = str(user.customer_id)
-            return redirect('user_page')
+            return redirect('user_panel')
         else:
             html = "<html><body>Incorrect Credentials</body></html>"
             return HttpResponse(html)
 
 
-class UserPage(APIView):
+class UserPanel(APIView):
 
     def get(self , request):
         print(request)
@@ -46,11 +46,11 @@ class UserPage(APIView):
         c = {
             'user': user
         }
-        plt.plot([1, 2, 3], [5, 10, 11], c='b')
-        plt.xlabel('Time')
-        plt.ylabel('Paid Loans')
+        #plt.plot([1, 2, 3], [5, 10, 11], c='b')
+        #plt.xlabel('Time')
+        #plt.ylabel('Reputation')
         address = 'Customer/static/Graphs/' + str(user.customer_id) + '-loan_graph.png'
-        plt.savefig(address)
+        #plt.savefig(address)
         return HttpResponse(t.render(c))
 
 
