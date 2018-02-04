@@ -7,7 +7,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import sklearn.linear_model
-get_ipython().magic('matplotlib notebook')
 
 
 # In[3]:
@@ -32,7 +31,7 @@ df
 
 # In[7]:
 
-df2 = pd.DataFrame()
+df2 = pd.DataFrame()  
 df2['Year'] = df.columns
 df2['Price'] = df.values.reshape(-1)
 
@@ -47,7 +46,6 @@ df2
 fig = plt.figure(1)
 axes = fig.add_subplot(111)
 axes.plot(df2['Year'], df2['Price'])
-plt.show()
 
 
 # In[59]:
@@ -107,12 +105,12 @@ plt.scatter(years, listt, c='r')
 
 # In[67]:
 
-get_ipython().magic('pinfo plt.plot')
 
 
 # In[68]:
 
-listt
+
+plt.show()
 
 
 # In[ ]:

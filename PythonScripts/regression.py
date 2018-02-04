@@ -108,10 +108,10 @@ print(mmm[0][0])'''
 
 # In[299]:
 
-#idd = 1002
+idd = 1095
 def start(idd):
     trend(idd)
-    #print('INSIDE : ' , mmm[0][0])
+    #print('List : ' , lll)
     return lll,mmm[0][0]
 #start(idd)
 
