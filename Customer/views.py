@@ -11,8 +11,6 @@ from PythonScripts import regression
 import matplotlib.pyplot as plt
 import os
 
-# Create your views here.
-
 #predict/
 class CustomerList(APIView) :
 
@@ -76,8 +74,9 @@ class UserPanel(APIView):
         duration = [4, 8, 12]
 
         t = loader.get_template(os.path.dirname(os.path.dirname(__file__)) + '/Customer/Template/user_details.html')
-
-        plt.plot(duration, values, c='b' , label='With Referees')
+        import seaborn as sns
+        sns.set()
+        plt.plot(duration, values , c='b' , label='With Referees')
         plt.plot(duration, [values_mmm]*len(values), c='r', label='Without Referees')
         ax = plt.gca()
         ax.spines['right'].set_visible(False)
