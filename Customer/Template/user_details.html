@@ -53,7 +53,7 @@
                 <a href="#"><img src="https://dl.dropboxusercontent.com/s/7pcnqq18skh1myk/avatar.jpg" alt="Anis M" /></a>
             </div>
             <div class="profile-details">
-                <h1>Agent 47</h1>
+                <h1>{{ user.customer_name }}</h1>
             </div>
         </div>
         <div class="profile-map" style="display: none;">
@@ -64,23 +64,23 @@
         <center><div class="profile-content">
             <ul>
                 <li>
-                    <div class="digits">83000</div>
+                    <div class="digits">{{ acc_bal }}</div>
                     Account Balance
                 </li>
                 <li>
-                    <div class="digits">1507</div>
+                    <div class="digits">{{ fixed_dep }}</div>
                     Fixed Deposit
                 </li>
                 <li>
-                    <div class="digits">2</div>
-                    Active Loans
+                    <div class="digits">{{ active_loan }}</div>
+                    Active Loan
                 </li>
                 <li>
-                    <div class="digits">ULTRA</div>
+                    <div class="digits">{{ refr }}</div>
                     Level of Refr
                 </li>
                 <li>
-                    <div class="digits">42000</div>
+                    <div class="digits">{{ paid_loan }}</div>
                     Paid Loans
                 </li>
             </ul>

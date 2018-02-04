@@ -79,9 +79,12 @@ class UserPanel(APIView):
 
         plt.plot(duration, values, c='b' , label='With Referees')
         plt.plot(duration, [values_mmm]*len(values), c='r', label='Without Referees')
+        ax = plt.gca()
+        ax.spines['right'].set_visible(False)
+        ax.spines['top'].set_visible(False)
 
         for i in range(len(values)):
-            plt.text(duration[i]+0.1,values[i]-5000  ,str(i) + ' payment')
+            plt.text(duration[i]+0.1,values[i]-5000  ,str(i+1) + ' Repaid')
 
         plt.xlabel('Time (Months)')
         plt.ylabel('Loan Eligibility')
