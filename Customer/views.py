@@ -10,6 +10,7 @@ from django.template import loader
 from PythonScripts import regression
 import matplotlib.pyplot as plt
 import os
+import matplotlib
 
 
 #predict/
