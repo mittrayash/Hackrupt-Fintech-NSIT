@@ -7,7 +7,7 @@ from .serializers import CustomerSerializer
 import pandas as pd
 import numpy as np
 from django.template import loader
-from PythonScripts import regression
+from PythonScripts import regression  
 import matplotlib.pyplot as plt
 import os
 import matplotlib
