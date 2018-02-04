@@ -11,17 +11,18 @@
     <script>
 
     function showLoan() {
-        var divloan = document.getElementById("division_loan")
-        var divInvest = document.getElementById("division_invest")
-        divloan.style.visibility = 'visible';
-        divInvest.style.visibility = 'hidden';
+        var img = document.getElementById("img_graph").src= '/static/Graphs/' +{{ user.customer_id }} + '-loan_graph.png';
+
     }
 
     function showInvest() {
-        var divloan = document.getElementById("division_loan")
-        var divInvest = document.getElementById("division_invest")
-        divloan.style.visibility = 'hidden';
-        divInvest.style.visibility = 'visible';
+        var img = document.getElementById("img_graph").src= '/static/Graphs/bank.png';
+
+    }
+
+    function showInvestGold() {
+        var img = document.getElementById("img_graph").src= '/static/Graphs/gold.png';
+
     }
 
     </script>
@@ -33,7 +34,8 @@
         <div class="col-sm-3" style="margin-top: 20px">
             <ul class="form">
                 <li><a class="profile" href="javascript:showLoan();"><i class="icon-user"></i>Loan Adviser</a></li>
-                <li><a class="settings" href="javascript:showInvest();"><i class="icon-cog"></i>Investment Adviser</a></li>
+                <li><a class="settings" href="javascript:showInvest();"><i class="icon-cog"></i>Bank Investment Adviser</a></li>
+                <li><a class="profile" href="javascript:showInvestGold();"><i class="icon-cog"></i>Gold Investment Adviser</a></li>
                 <li><a class="logout" href="http://127.0.0.1:8000/home/"><i class="icon-signout"></i>Logout</a></li>
             </ul>
         </div>
@@ -56,10 +58,7 @@
                 <h1>{{ user.customer_name }}</h1>
             </div>
         </div>
-        <div class="profile-map" style="display: none;">
-            <iframe width="100%" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Saveology+New+York&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=40.052282,86.572266&amp;t=h&amp;ie=UTF8&amp;hq=Saveology&amp;hnear=New+York&amp;ll=40.552027,-74.420902&amp;spn=0.357117,0.912844&amp;iwloc=near&amp;output=embed"></iframe>
-            <div class="clear"></div>
-        </div>
+
 
         <center><div class="profile-content">
             <ul>
@@ -88,15 +87,11 @@
         </div></center>
 
    </div> </center>
-            <center><img src="../static/Graphs/{{ user.customer_id }}-loan_graph.png" alt="Graph"></center>
+            <center><img src="../static/Graphs/{{ user.customer_id }}-loan_graph.png" id='img_graph' alt="Graph"></center>
 
         </div>
 
-        <div class="col-sm-6" id="division_invest" style="margin-top: 20px;visibility: hidden">
 
-            <p>HELLO</p>
-
-        </div>
 
     </div>
 </div>

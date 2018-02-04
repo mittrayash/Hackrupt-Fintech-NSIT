@@ -8,78 +8,36 @@ import sklearn.linear_model
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-get_ipython().magic('matplotlib notebook')
-
-
-# In[2]:
-
 
 df = pd.read_csv('Gold_prices.csv')
+
 df = df[df.columns[~df.columns.str.contains('Unnamed:')]]
 df.columns = ['Date', 'Price']
-df.head()
-
-
-# In[3]:
-
 
 x = [i for i in range(0,len(df['Price']))] 
-
-
-# In[4]:
-
-
-print(df['Price'])
-
-
-# In[5]:
-
 
 new_price = []
 for i in df['Price']:
     i = i[:2]+i[3:8]
     i = float(i)
-    new_price.append(i)    
-type(new_price[0])
-
-
-# In[6]:
-
-
-#price = df['Price'].tolist()
-
-
-# In[7]:
-
+    new_price.append(i)
 
 df['Price'] = new_price
 
 
-# In[8]:
-
-
 (df['Date'][17])
-
-
-# In[9]:
 
 
 
 df['Date'] = pd.to_datetime(df['Date'], format='%d-%m-%Y')
 
 
-# In[10]:
-
-
 df['Date'][2]
 
 
-# In[11]:
-
-
-plt.figure(1)
+"""plt.figure(1)
 plt.plot(df['Date'], df['Price'])
-plt.show()
+plt.show()"""
 
 
 # In[12]:
@@ -131,11 +89,6 @@ linreg = LinearRegression().fit(df1['Year'].reshape(-1,1), df1['Price'])
 # In[17]:
 
 
-print('(poly deg 2) linear model coeff (w):\n{}'
-     .format(linreg.coef_))
-print('(poly deg 2) linear model intercept (b): {:.3f}'
-     .format(linreg.intercept_))
-
 
 # In[18]:
 
@@ -145,14 +98,14 @@ year = []
 for x in range(2022,2023):
     year.append(x)
     pred_prices.append(linreg.predict(x))
-year,pred_prices
+
 
 
 
 # In[24]:
 
 
-plt.figure(2)
+plt.figure()
 plt.plot(df1['Year'], df1['Price'], label = 'Previous Gold Value trends')
 plt.scatter(year,pred_prices, c='r', label= 'Predicted Goal Value by 2022')
 plt.legend()
