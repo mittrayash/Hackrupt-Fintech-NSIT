@@ -89,6 +89,8 @@ class UserPanel(APIView):
 
         plt.xlabel('Time (Months)')
         plt.ylabel('Loan Eligibility')
+        ax.get_yaxis().set_major_formatter(
+            matplotlib.ticker.FuncFormatter(lambda x, p: format(int(x), ',')))
         plt.legend()
         address = 'Customer/static/Graphs/' + str(user.customer_id) + '-loan_graph.png'
         plt.savefig(address)

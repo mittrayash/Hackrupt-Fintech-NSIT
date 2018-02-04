@@ -1,17 +1,33 @@
 
 # coding: utf-8
 
+<<<<<<< HEAD
+# In[23]:
+
+
+=======
 # In[28]:
 
+>>>>>>> abdb5ed493dbef2ad692b6565334b5460d9846d3
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import sklearn.linear_model
 import seaborn as sns
 from sklearn.linear_model import LinearRegression
+<<<<<<< HEAD
+import matplotlib
+get_ipython().magic('matplotlib notebook')
+sns.set()
+=======
+>>>>>>> abdb5ed493dbef2ad692b6565334b5460d9846d3
 
 sns.set()
 
+<<<<<<< HEAD
+# In[24]:
+=======
+>>>>>>> abdb5ed493dbef2ad692b6565334b5460d9846d3
 
 # In[29]:
 
@@ -21,7 +37,12 @@ df.columns = ['Date', 'Price']
 df.head()
 
 
+<<<<<<< HEAD
+# In[25]:
+
+=======
 # In[31]:
+>>>>>>> abdb5ed493dbef2ad692b6565334b5460d9846d3
 
 x = [i for i in range(0,len(df['Price']))] 
 
@@ -65,9 +86,33 @@ slope.insert(0,0.000000)
 df1 = pd.DataFrame(data={'Year':year, 'Price':uniq_date, 'Slope':slope})
 df1 = df1[['Year', 'Slope', 'Price']]
 
+<<<<<<< HEAD
+
+# In[26]:
+
+
+"""p1 = []
+for i in df1['Price']:
+    i = str(str(i)[:2]+","+str(i)[2:7])
+    p1.append(i)
+df1['Price'] = p1
+df1['Price']
+for i in range(len(df1['Price'])):
+    df1['Price'][i] = format(df1['Price'][i],',')
+df1['Price']"""
+
+
+# In[27]:
+
+
 from sklearn.linear_model import LinearRegression
 linreg = LinearRegression().fit(df1['Year'].reshape(-1,1), df1['Price'])
 
+=======
+from sklearn.linear_model import LinearRegression
+linreg = LinearRegression().fit(df1['Year'].reshape(-1,1), df1['Price'])
+
+>>>>>>> abdb5ed493dbef2ad692b6565334b5460d9846d3
 pred_prices = []
 year = []
 for x in range(2022,2023):
@@ -87,8 +132,15 @@ plt.ylabel("Gold Price Value per troy ounce")
 ax = plt.gca()
 ax.spines['right'].set_visible(False)
 ax.spines['top'].set_visible(False)
+<<<<<<< HEAD
+
+ax.get_yaxis().set_major_formatter(
+    matplotlib.ticker.FuncFormatter(lambda x, p: format(int(x), ',')))
+
+=======
 address = '../Customer/static/Graphs/gold.png'
 plt.savefig(address)
+>>>>>>> abdb5ed493dbef2ad692b6565334b5460d9846d3
 plt.show()
 
 
