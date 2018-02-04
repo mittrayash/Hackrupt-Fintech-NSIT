@@ -51,7 +51,7 @@ class UserPanel(APIView):
         #plt.ylabel('Reputation')
         address = 'Customer/static/Graphs/' + str(user.customer_id) + '-loan_graph.png'
         #plt.savefig(address)
-        return HttpResponse(t.render(c))
+        return HttpResponse(t.render(c))    
 
 
 
