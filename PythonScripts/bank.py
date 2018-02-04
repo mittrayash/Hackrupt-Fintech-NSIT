@@ -1,100 +1,33 @@
 
 # coding: utf-8
 
-# In[2]:
+# In[7]:
 
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import sklearn.linear_model
+import seaborn as sns
+from sklearn.linear_model import LinearRegression
+
 get_ipython().magic('matplotlib notebook')
+sns.set()
 
 
-# In[3]:
+# In[14]:
 
 df = pd.read_csv('datasets/bank/API_FR.INR.LEND_DS2_en_csv_v2.csv')
-
-
-# In[4]:
-
 df = df[df['Country Name'] == 'India']
-
-
-# In[5]:
-
 df = df[df.columns[-30:-2]]
-
-
-# In[6]:
-
 df
-
-
-# In[7]:
-
 df2 = pd.DataFrame()
 df2['Year'] = df.columns
 df2['Price'] = df.values.reshape(-1)
-
-
-# In[57]:
-
-df2
-
-
-# In[58]:
-
 fig = plt.figure(1)
 axes = fig.add_subplot(111)
-axes.plot(df2['Year'], df2['Price'])
+axes.plot(df2['Year'], df2['Price'], label='Returns today')
 plt.show()
-
-
-# In[59]:
-
-lss = []
-
-for x in range(len(df2['Year']) - 1):
-    lss.append(df2['Price'][x+1] - df2['Price'][x])
-print(lss)
-lss.append(lss[-1])
-
-
-# In[60]:
-
-df2['Slope'] = lss
-
-
-# In[61]:
-
-df2
-
-
-# In[62]:
-
-df2 = df2[['Year', 'Slope', 'Price']]
-
-
-# In[63]:
-
-df2
-
-
-# In[64]:
-
-from sklearn.linear_model import LinearRegression
-
 linreg = LinearRegression().fit(df2[df2.columns[0:1]], df2['Price'])
-
-
-# In[65]:
-
-print('linear model coeff (w): {}'.format(linreg.coef_))
-print('linear model intercept (b): {:.3f}'.format(linreg.intercept_))
-
-
-# In[66]:
-
 listt = []
 years = []
 for x in range(2020,2021):
@@ -102,17 +35,14 @@ for x in range(2020,2021):
     listt.append(linreg.predict(x))
 listt
 
-plt.scatter(years, listt, c='r')
+plt.xlabel("Year")
+plt.ylabel("Returns (in %)")
+ax = plt.gca()
+ax.spines['right'].set_visible(False)
+ax.spines['top'].set_visible(False)
 
-
-# In[67]:
-
-get_ipython().magic('pinfo plt.plot')
-
-
-# In[68]:
-
-listt
+plt.scatter(years, listt, c='r', label='Predicted Returns by 2020')
+plt.legend()
 
 
 # In[ ]:
