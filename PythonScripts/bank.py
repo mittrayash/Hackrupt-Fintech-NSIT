@@ -10,7 +10,6 @@ import sklearn.linear_model
 import seaborn as sns
 from sklearn.linear_model import LinearRegression
 
-get_ipython().magic('matplotlib notebook')
 sns.set()
 
 
@@ -26,14 +25,13 @@ df2['Price'] = df.values.reshape(-1)
 fig = plt.figure(1)
 axes = fig.add_subplot(111)
 axes.plot(df2['Year'], df2['Price'], label='Returns today')
-plt.show()
+
 linreg = LinearRegression().fit(df2[df2.columns[0:1]], df2['Price'])
 listt = []
 years = []
 for x in range(2020,2021):
     years.append(x)
     listt.append(linreg.predict(x))
-listt
 
 plt.xlabel("Year")
 plt.ylabel("Returns (in %)")
@@ -44,8 +42,6 @@ ax.spines['top'].set_visible(False)
 plt.scatter(years, listt, c='r', label='Predicted Returns by 2020')
 plt.legend()
 
-
-# In[ ]:
-
+plt.show()
 
 
