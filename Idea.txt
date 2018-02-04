@@ -3,7 +3,13 @@ Bitcoin Wallet - Interfacing with AMazon, etc
 
 
 
-We plan to build an Artificial Intelligence based Recommender system that will be available to people on all major platforms. Through this application, we will disseminate the profits one can exhibit by incorporating finance into their lives. Not only do we focus on mere inclusion, we also incorporate the theme of good financial inclusion, wherein a person is rewarded or penalized based on their past record. Also, we introduce refereeing as a concept. In that sense, a referee can vouch for a new candidate or a candidate whose profile is on the lower side of the spectrum.
+We plan to build an Artificial Intelligence based Recommender system that will be available to people on all major platforms.
+
+ Through this application, we will disseminate the profits one can exhibit by incorporating finance into their lives.
+
+ Not only do we focus on mere inclusion, we also incorporate the theme of good financial inclusion, wherein a person is rewarded or penalized based on their past record.
+
+ Also, we introduce refereeing as a concept. In that sense, a referee can vouch for a new candidate or a candidate whose profile is on the lower side of the spectrum.
 
 Here is a blueprint of our plan:
 
