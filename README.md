@@ -1,6 +1,7 @@
 # Hackrupt-fintech-Hackathon
 
-I, with my team built a loan advisory web app for banks which tells the amount of loan a candidate is eligible for based on his/her previous financial record with the bank.
+A loan advisory web app for banks which tells the amount of loan a candidate is eligible for based on his/her previous financial record with the bank.
+Demo : https://youtu.be/dqr5JUR99QQ
 
 
 # Example screenshots
